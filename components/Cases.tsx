@@ -14,12 +14,12 @@ const Cases: React.FC = () => {
   }, []);
 
   return (
-    <section id="cases" className="py-24 bg-gray-50 dark:bg-black relative overflow-hidden transition-colors duration-300">
+    <section id="cases" className="py-24 bg-black relative overflow-hidden">
       {/* Background decoration */}
-      <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-gray-200 dark:from-neutral-900 to-transparent opacity-50 pointer-events-none transition-colors"></div>
+      <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-neutral-900 to-transparent opacity-50 pointer-events-none"></div>
 
       <div className="container mx-auto px-6 relative z-10">
-        <h2 className="text-3xl md:text-5xl font-serif text-gray-900 dark:text-white mb-16 text-center">Resultados Reais</h2>
+        <h2 className="text-3xl md:text-5xl font-serif text-white mb-16 text-center">Resultados Reais</h2>
 
         <div className="max-w-4xl mx-auto">
           <div className="relative h-[400px] md:h-[300px]">
@@ -30,7 +30,7 @@ const Cases: React.FC = () => {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -100 }}
                 transition={{ duration: 0.5 }}
-                className="absolute inset-0 flex flex-col md:flex-row items-center md:items-start gap-8 bg-white/80 dark:bg-neutral-900/50 backdrop-blur-sm p-8 md:p-12 rounded-2xl border border-gray-200 dark:border-white/10 shadow-lg dark:shadow-none"
+                className="absolute inset-0 flex flex-col md:flex-row items-center md:items-start gap-8 bg-neutral-900/50 backdrop-blur-sm p-8 md:p-12 rounded-2xl border border-white/10"
               >
                 <div className="relative shrink-0">
                     <img 
@@ -44,7 +44,7 @@ const Cases: React.FC = () => {
                 </div>
 
                 <div className="text-center md:text-left">
-                    <p className="text-xl md:text-2xl font-serif italic text-gray-800 dark:text-white mb-6 leading-relaxed">
+                    <p className="text-xl md:text-2xl font-serif italic text-white mb-6 leading-relaxed">
                         "{TESTIMONIALS[currentIndex].testimonial}"
                     </p>
                     
@@ -54,7 +54,7 @@ const Cases: React.FC = () => {
                     </div>
 
                     {TESTIMONIALS[currentIndex].metric && (
-                        <div className="mt-6 inline-block px-4 py-1 bg-green-500/10 border border-green-500/30 text-green-600 dark:text-green-400 rounded text-sm font-bold">
+                        <div className="mt-6 inline-block px-4 py-1 bg-green-500/10 border border-green-500/30 text-green-400 rounded text-sm font-bold">
                             Resultado: {TESTIMONIALS[currentIndex].metric}
                         </div>
                     )}
@@ -69,7 +69,7 @@ const Cases: React.FC = () => {
                 key={idx}
                 onClick={() => setCurrentIndex(idx)}
                 className={`w-3 h-3 rounded-full transition-all ${
-                  idx === currentIndex ? 'bg-gold w-8' : 'bg-gray-300 dark:bg-gray-700 hover:bg-gray-400 dark:hover:bg-gray-500'
+                  idx === currentIndex ? 'bg-gold w-8' : 'bg-gray-700 hover:bg-gray-500'
                 }`}
               />
             ))}

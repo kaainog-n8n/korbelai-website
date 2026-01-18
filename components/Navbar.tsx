@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Sun, Moon } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { NAV_ITEMS } from '../constants';
 
 const DobermanLogo = ({ className }: { className?: string }) => (
@@ -17,9 +17,7 @@ const DobermanLogo = ({ className }: { className?: string }) => (
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
-  const [theme, setTheme] = useState<'light' | 'dark'>('dark');
 
-  // Handle Scroll
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -28,40 +26,13 @@ const Navbar: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Handle Theme Initialization and Change
-  useEffect(() => {
-    const savedTheme = localStorage.getItem('korbel-theme') as 'light' | 'dark' | null;
-    const initialTheme = savedTheme || 'dark';
-    setTheme(initialTheme);
-    
-    if (initialTheme === 'dark') {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  }, []);
-
-  const toggleTheme = () => {
-    const newTheme = theme === 'dark' ? 'light' : 'dark';
-    setTheme(newTheme);
-    localStorage.setItem('korbel-theme', newTheme);
-    
-    if (newTheme === 'dark') {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  };
-
   return (
     <>
       <motion.nav
         initial={{ height: 100 }}
         animate={{ 
           height: isScrolled ? 70 : 100,
-          backgroundColor: isScrolled 
-            ? (theme === 'dark' ? 'rgba(5,5,5,0.9)' : 'rgba(255,255,255,0.9)') 
-            : 'rgba(0,0,0,0)',
+          backgroundColor: isScrolled ? 'rgba(5,5,5,0.9)' : 'rgba(0,0,0,0)',
           backdropFilter: isScrolled ? 'blur(12px)' : 'blur(0px)'
         }}
         transition={{ duration: 0.3 }}
@@ -74,7 +45,7 @@ const Navbar: React.FC = () => {
             <div className="absolute inset-0 bg-gold/20 blur-lg rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
             <DobermanLogo className="w-10 h-10 text-gold transition-transform group-hover:scale-105 relative z-10" />
           </div>
-          <span className="text-xl md:text-2xl font-serif font-bold text-gray-900 dark:text-white tracking-widest transition-colors">
+          <span className="text-xl md:text-2xl font-serif font-bold text-white tracking-widest">
             KORBEL <span className="text-gold">AI</span>
           </span>
         </a>
@@ -85,20 +56,11 @@ const Navbar: React.FC = () => {
             <a
               key={item.label}
               href={item.href}
-              className="text-xs font-tech uppercase font-bold tracking-[0.2em] text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[1px] after:bg-gold after:transition-all hover:after:w-full"
+              className="text-xs font-tech uppercase font-bold tracking-[0.2em] text-gray-400 hover:text-white transition-colors relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[1px] after:bg-gold after:transition-all hover:after:w-full"
             >
               {item.label}
             </a>
           ))}
-          
-          {/* Theme Toggle Desktop */}
-          <button 
-            onClick={toggleTheme}
-            className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-white/10 transition-colors text-gray-700 dark:text-gold"
-            aria-label="Toggle Theme"
-          >
-            {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
-          </button>
         </div>
 
         {/* CTA Button */}
@@ -111,21 +73,13 @@ const Navbar: React.FC = () => {
           </a>
         </div>
 
-        {/* Mobile Toggle & Theme */}
-        <div className="md:hidden flex items-center gap-4">
-            <button 
-              onClick={toggleTheme}
-              className="text-gray-700 dark:text-gold"
-            >
-               {theme === 'dark' ? <Sun size={24} /> : <Moon size={24} />}
-            </button>
-            <button 
-              className="text-gold"
-              onClick={() => setIsMobileOpen(true)}
-            >
-              <Menu className="w-8 h-8" />
-            </button>
-        </div>
+        {/* Mobile Toggle */}
+        <button 
+          className="md:hidden text-gold"
+          onClick={() => setIsMobileOpen(true)}
+        >
+          <Menu className="w-8 h-8" />
+        </button>
       </motion.nav>
 
       {/* Mobile Overlay */}
@@ -136,10 +90,10 @@ const Navbar: React.FC = () => {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: '100%' }}
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            className="fixed inset-0 z-[60] bg-white dark:bg-black flex flex-col items-center justify-center space-y-8"
+            className="fixed inset-0 z-[60] bg-black flex flex-col items-center justify-center space-y-8"
           >
             <button 
-              className="absolute top-8 right-8 text-gray-900 dark:text-white hover:text-gold"
+              className="absolute top-8 right-8 text-white hover:text-gold"
               onClick={() => setIsMobileOpen(false)}
             >
               <X className="w-10 h-10" />
@@ -153,7 +107,7 @@ const Navbar: React.FC = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: idx * 0.1 }}
-                className="text-3xl font-serif text-gray-900 dark:text-white hover:text-gold transition-colors"
+                className="text-3xl font-serif text-white hover:text-gold transition-colors"
               >
                 {item.label}
               </motion.a>

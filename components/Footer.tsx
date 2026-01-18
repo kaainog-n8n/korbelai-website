@@ -14,36 +14,36 @@ const DobermanLogo = ({ className }: { className?: string }) => (
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-gray-100 dark:bg-black border-t border-gray-200 dark:border-white/10 pt-20 pb-10 font-sans transition-colors duration-300">
+    <footer className="bg-black border-t border-white/10 pt-20 pb-10 font-sans">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           
           <div className="md:col-span-1">
             <div className="flex items-center gap-3 mb-6">
                 <DobermanLogo className="w-10 h-10 text-gold" />
-                <span className="text-2xl font-serif font-bold text-gray-900 dark:text-white tracking-widest">
+                <span className="text-2xl font-serif font-bold text-white tracking-widest">
                     KORBEL <span className="text-gold">AI</span>
                 </span>
             </div>
-            <p className="text-gray-600 dark:text-gray-500 text-sm leading-relaxed mb-6 font-tech text-lg">
+            <p className="text-gray-500 text-sm leading-relaxed mb-6 font-tech text-lg">
                 O estúdio premium de inteligência artificial focado em escalar resultados para o mercado imobiliário de alto padrão.
             </p>
             <div className="flex gap-4">
-                <a href="#" className="w-10 h-10 rounded-full bg-white dark:bg-neutral-900 border border-gray-300 dark:border-white/5 flex items-center justify-center text-gray-500 dark:text-gray-400 hover:text-gold hover:border-gold transition-all">
+                <a href="#" className="w-10 h-10 rounded-full bg-neutral-900 border border-white/5 flex items-center justify-center text-gray-400 hover:text-gold hover:border-gold transition-all">
                     <Instagram size={18} />
                 </a>
-                <a href="#" className="w-10 h-10 rounded-full bg-white dark:bg-neutral-900 border border-gray-300 dark:border-white/5 flex items-center justify-center text-gray-500 dark:text-gray-400 hover:text-gold hover:border-gold transition-all">
+                <a href="#" className="w-10 h-10 rounded-full bg-neutral-900 border border-white/5 flex items-center justify-center text-gray-400 hover:text-gold hover:border-gold transition-all">
                     <Linkedin size={18} />
                 </a>
-                <a href="#" className="w-10 h-10 rounded-full bg-white dark:bg-neutral-900 border border-gray-300 dark:border-white/5 flex items-center justify-center text-gray-500 dark:text-gray-400 hover:text-gold hover:border-gold transition-all">
+                <a href="#" className="w-10 h-10 rounded-full bg-neutral-900 border border-white/5 flex items-center justify-center text-gray-400 hover:text-gold hover:border-gold transition-all">
                     <Mail size={18} />
                 </a>
             </div>
           </div>
 
           <div>
-            <h4 className="text-gray-900 dark:text-white font-bold font-tech uppercase tracking-[0.2em] mb-6 text-sm">Empresa</h4>
-            <ul className="space-y-4 text-gray-600 dark:text-gray-500 text-sm">
+            <h4 className="text-white font-bold font-tech uppercase tracking-[0.2em] mb-6 text-sm">Empresa</h4>
+            <ul className="space-y-4 text-gray-500 text-sm">
                 <li><a href="#sobre" className="hover:text-gold transition-colors">Sobre Nós</a></li>
                 <li><a href="#cases" className="hover:text-gold transition-colors">Cases de Sucesso</a></li>
                 <li><a href="#projetos" className="hover:text-gold transition-colors">Nossos Serviços</a></li>
@@ -52,8 +52,8 @@ const Footer: React.FC = () => {
           </div>
 
           <div>
-            <h4 className="text-gray-900 dark:text-white font-bold font-tech uppercase tracking-[0.2em] mb-6 text-sm">Legal</h4>
-            <ul className="space-y-4 text-gray-600 dark:text-gray-500 text-sm">
+            <h4 className="text-white font-bold font-tech uppercase tracking-[0.2em] mb-6 text-sm">Legal</h4>
+            <ul className="space-y-4 text-gray-500 text-sm">
                 <li><a href="#" className="hover:text-gold transition-colors">Termos de Uso</a></li>
                 <li><a href="#" className="hover:text-gold transition-colors">Política de Privacidade</a></li>
                 <li><a href="#" className="hover:text-gold transition-colors">LGPD</a></li>
@@ -61,13 +61,13 @@ const Footer: React.FC = () => {
           </div>
 
           <div>
-            <h4 className="text-gray-900 dark:text-white font-bold font-tech uppercase tracking-[0.2em] mb-6 text-sm">Newsletter</h4>
-            <p className="text-gray-600 dark:text-gray-500 text-sm mb-4">Receba insights exclusivos sobre IA imobiliária.</p>
+            <h4 className="text-white font-bold font-tech uppercase tracking-[0.2em] mb-6 text-sm">Newsletter</h4>
+            <p className="text-gray-500 text-sm mb-4">Receba insights exclusivos sobre IA imobiliária.</p>
             <form className="flex flex-col gap-3">
                 <input 
                     type="email" 
                     placeholder="Seu melhor e-mail" 
-                    className="bg-white dark:bg-neutral-900 border border-gray-300 dark:border-neutral-800 text-gray-900 dark:text-white px-4 py-3 rounded text-sm focus:outline-none focus:border-gold transition-colors font-tech"
+                    className="bg-neutral-900 border border-neutral-800 text-white px-4 py-3 rounded text-sm focus:outline-none focus:border-gold transition-colors font-tech"
                 />
                 <button className="bg-gold text-black font-bold font-tech uppercase tracking-widest text-sm py-3 rounded hover:bg-white transition-colors">
                     Inscrever-se
@@ -77,9 +77,9 @@ const Footer: React.FC = () => {
 
         </div>
 
-        <div className="border-t border-gray-300 dark:border-white/5 pt-8 text-center md:text-left flex flex-col md:flex-row justify-between items-center text-gray-600 text-xs font-tech uppercase tracking-wider">
+        <div className="border-t border-white/5 pt-8 text-center md:text-left flex flex-col md:flex-row justify-between items-center text-gray-600 text-xs font-tech uppercase tracking-wider">
             <p>&copy; {new Date().getFullYear()} Korbel AI. Todos os direitos reservados.</p>
-            <p className="mt-2 md:mt-0 md:mr-24">Feito em São Paulo para o Mundo.</p>
+            <p className="mt-2 md:mt-0">Feito em São Paulo para o Mundo.</p>
         </div>
       </div>
     </footer>

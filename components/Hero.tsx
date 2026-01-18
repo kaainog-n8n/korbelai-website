@@ -37,7 +37,7 @@ const Hero: React.FC = () => {
   const repeatedPhrase = Array(12).fill("Mais leads qualificados sem aumentar equipe");
 
   return (
-    <section className="relative min-h-screen flex flex-col justify-center items-center overflow-hidden bg-gray-50 dark:bg-[#050505] pt-20 transition-colors duration-300">
+    <section className="relative min-h-screen flex flex-col justify-center items-center overflow-hidden bg-[#050505] pt-20">
       
       {/* Background Blueprint Animation */}
       <div className="absolute inset-0 z-0 overflow-hidden flex items-center justify-center pointer-events-none">
@@ -71,9 +71,8 @@ const Hero: React.FC = () => {
             />
         </div>
         
-        {/* Fade gradients adjusted for light/dark mode */}
-        <div className="absolute inset-0 bg-gradient-to-t from-gray-50 via-transparent to-gray-50 dark:from-[#050505] dark:via-transparent dark:to-[#050505] transition-colors duration-300"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-gray-50 via-transparent to-gray-50 dark:from-[#050505] dark:via-transparent dark:to-[#050505] transition-colors duration-300"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-[#050505]"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#050505] via-transparent to-[#050505]"></div>
       </div>
 
       <div className="container mx-auto px-6 relative z-10 flex flex-col items-center text-center">
@@ -82,7 +81,7 @@ const Hero: React.FC = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-4xl md:text-6xl lg:text-8xl font-serif font-bold mb-6 drop-shadow-2xl tracking-tight bg-clip-text text-transparent bg-gradient-to-b from-gray-800 via-gray-600 to-gray-400 dark:from-white dark:via-gray-200 dark:to-gray-500"
+          className="text-4xl md:text-6xl lg:text-8xl font-serif font-bold mb-6 drop-shadow-2xl tracking-tight bg-clip-text text-transparent bg-gradient-to-b from-white via-gray-200 to-gray-500"
         >
           Eliminamos Trabalho <br/> 
           <span>Manual com IA</span>
@@ -92,18 +91,18 @@ const Hero: React.FC = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.8 }}
-          className="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mb-10 font-light"
+          className="text-lg md:text-xl text-gray-400 max-w-2xl mb-10 font-light"
         >
           Automatize prospecção, qualifique leads e feche mais negócios.
           <br className="hidden md:block" />
-          <span className="font-bold text-gray-900 dark:text-white block mt-4 text-xl">24/7 transformando leads em contratos.</span>
+          <span className="font-bold text-white block mt-4 text-xl">24/7 transformando leads em contratos.</span>
         </motion.p>
 
         <motion.a
           href="#agendamento"
           whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(212, 175, 55, 0.4)" }}
           whileTap={{ scale: 0.95 }}
-          className="bg-gold text-black font-tech font-bold uppercase tracking-[0.2em] py-4 px-10 text-sm border border-gold hover:bg-transparent hover:text-gold-dark dark:hover:text-gold transition-all duration-300 relative overflow-hidden group"
+          className="bg-gold text-black font-tech font-bold uppercase tracking-[0.2em] py-4 px-10 text-sm border border-gold hover:bg-transparent hover:text-gold transition-all duration-300 relative overflow-hidden group"
         >
           <span className="relative z-10">Falar com especialista</span>
           <div className="absolute inset-0 bg-white/20 -translate-x-full group-hover:translate-x-full transition-transform duration-500 skew-x-12"></div>
@@ -112,7 +111,7 @@ const Hero: React.FC = () => {
       </div>
 
       {/* Kinetic Text Slider */}
-      <div className="absolute bottom-0 w-full border-t border-black/5 dark:border-white/5 bg-white/60 dark:bg-black/60 backdrop-blur-md py-6 overflow-hidden transition-colors duration-300">
+      <div className="absolute bottom-0 w-full border-t border-white/5 bg-black/60 backdrop-blur-md py-6 overflow-hidden">
         <div className="flex w-full items-center">
           <motion.div 
             className="flex gap-16 md:gap-24 whitespace-nowrap min-w-full"
@@ -122,7 +121,7 @@ const Hero: React.FC = () => {
             {[...repeatedPhrase].map((text, idx) => (
               <div 
                 key={idx} 
-                className="text-gray-500 dark:text-gray-600 font-tech text-lg md:text-xl font-semibold uppercase tracking-[0.15em] hover:text-gold transition-colors cursor-default"
+                className="text-gray-600 font-tech text-lg md:text-xl font-semibold uppercase tracking-[0.15em] hover:text-gold transition-colors cursor-default"
               >
                 {text}
               </div>

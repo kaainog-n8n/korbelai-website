@@ -9,11 +9,10 @@ import Cases from './components/Cases';
 import Booking from './components/Booking';
 import FAQ from './components/FAQ';
 import Footer from './components/Footer';
-import BackToTop from './components/BackToTop';
 
 function App() {
   return (
-    <div className="bg-gray-50 dark:bg-black min-h-screen text-gray-900 dark:text-white selection:bg-gold selection:text-black transition-colors duration-300">
+    <div className="bg-black min-h-screen text-white selection:bg-gold selection:text-black">
       <Navbar />
       <main>
         <Hero />
@@ -26,7 +25,6 @@ function App() {
         <FAQ />
       </main>
       <Footer />
-      <BackToTop />
     </div>
   );
 }
